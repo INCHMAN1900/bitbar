@@ -12,7 +12,7 @@ const https = require('https');
     res.on('end', _ => {
       const { returnvalue: returnValue, msg, list } = JSON.parse(rawData);
       if (!returnValue || msg !== '成功') {
-        console.log('请求失败')
+        return console.log('请求失败');
       }
 
       outputData(list);
